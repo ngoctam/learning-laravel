@@ -25,17 +25,17 @@
 			      <tr>
 			        <td>{{$post->id}}</td>
 			        <td><img height="50" src="{{$post->photo ? 'http://localhost/laravel-courses/application/public' . $post->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
-			        <td>{{$post->user->name}}</td>
+			        <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
 			        <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
 			        <td>{{$post->photo_id}}</td>
 			        <td>{{$post->title}}</td>
-			        <td>{{$post->body}}</td>
+			        <td>{{str_limit($post->body, 10)}}</td>
 			        <td>{{$post->created_at->diffForHumans()}}</td>
 			        <td>{{$post->updated_at->diffForHumans()}}</td>
 			      </tr>
 	        @endforeach
 	    @endif
 
-	    </tbody>
-	  </table>
+		</tbody>
+	</table>
 @endsection
