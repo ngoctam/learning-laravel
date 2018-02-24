@@ -66,7 +66,8 @@
     <!-- Comment -->
     <div class="media">
         <a class="pull-left" href="#">
-            <img height="64" class="media-object" src="{{$comment->photo ? 'http://localhost/laravel-courses/application/public' . $comment->photo : 'http://placehold.it/64x64'}}" alt="">
+            <img height="64" class="media-object" src="{{Auth::user()->gravatar}}" alt="">
+            <!-- <img height="64" class="media-object" src="{{$comment->photo ? 'http://localhost/laravel-courses/application/public' . $comment->photo : 'http://placehold.it/64x64'}}" alt=""> -->
         </a>
         <div class="media-body">
             <h4 class="media-heading">{{$comment->author}}
