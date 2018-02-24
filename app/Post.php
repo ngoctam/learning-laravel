@@ -2,17 +2,31 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Post extends Model implements SluggableInterface
 {
+    use SluggableTrait;
+
+    protected $sluggable = [
+        'build_from'    => 'title', 
+        'save_to'       => 'slug',
+        'on_update'     => true,
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'category_id', 'photo_id', 'title', 'body'
+        'user_id', 
+        'category_id', 
+        'photo_id', 
+        'title', 
+        'body'
     ];
 
     public function user(){
