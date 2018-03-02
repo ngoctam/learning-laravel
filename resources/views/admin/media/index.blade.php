@@ -17,7 +17,7 @@
 			@foreach($photos as $photo)
 				<tr>
 					<td>{{$photo->id}}</td>
-			        <td><img height="40" src="{{$photo->file ? 'http://localhost/laravel-courses/application/public' . $photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
+			        <td><img height="40" src="{{$photo->file ? $photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
 			        <td>{{$photo->created_at->diffForHumans()}}</td>
 			        <td>{{$photo->updated_at->diffForHumans()}}</td>
 			        <td>

@@ -19,7 +19,7 @@
     <hr>
 
     <!-- Preview Image -->
-    <img class="img-responsive" src="{{$post->photo ? 'http://localhost/laravel-courses/application/public' . $post->photo->file : 'http://placehold.it/900x300'}}" alt="">
+    <img class="img-responsive" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/900x300'}}" alt="">
 
     <hr>
 
@@ -67,7 +67,7 @@
     <div class="media">
         <a class="pull-left" href="#">
             <img height="64" class="media-object" src="{{Auth::user()->gravatar}}" alt="">
-            <!-- <img height="64" class="media-object" src="{{$comment->photo ? 'http://localhost/laravel-courses/application/public' . $comment->photo : 'http://placehold.it/64x64'}}" alt=""> -->
+            <!-- <img height="64" class="media-object" src="{{$comment->photo ? $comment->photo : 'http://placehold.it/64x64'}}" alt=""> -->
         </a>
         <div class="media-body">
             <h4 class="media-heading">{{$comment->author}}
@@ -81,7 +81,7 @@
                         <!-- Nested Comment -->
                         <div id="nested-comment" class="media">
                             <a class="pull-left" href="#">
-                                 <img height="64" class="media-object" src="{{$reply->photo ? 'http://localhost/laravel-courses/application/public' . $reply->photo : 'http://placehold.it/64x64'}}" alt="">
+                                 <img height="64" class="media-object" src="{{$reply->photo ? $reply->photo : 'http://placehold.it/64x64'}}" alt="">
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading">{{$reply->author}}
